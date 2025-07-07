@@ -8,9 +8,9 @@
 
 ## Why
 
-Many modern platforms embed user-specific watermarks into app screenshots. These watermarks are **invisible** to the eye but **detectable** via equalization or frequency analysis. Some are LSB-based, some render [snow-like patterns](#before--after) across RGB channels. Some survive compression. They are all *a form of tracking*. But everyone shouldn't have to carry a watermark on every screenshot.
+Many modern platforms embed user-specific watermarks into app screenshots. These watermarks are **invisible** to the eye but **detectable** via equalization or frequency analysis. Some are LSB-based, some render [snow-like patterns](#before--after) across RGB channels. Some even survive compression. They are all *a form of tracking*. And no one should be silently tagged just for sharing a screenshot.
 
-**Two-thirds** of high-traffic mobile apps in China now tag screenshots; many started in 2022 after [Douban](https://pandaily.com/douban-app-screenshots-contain-user-information-watermark?utm_source=chatgpt.com) & [Zhihu](https://www.sixthtone.com/news/1011179/zhihu-accused-of-using-watermarks-in-screenshots-to-locate-users-?utm_source=chatgpt.com]) incidents. Outside China it’s niche. Except for DRM-heavy verticals (video streaming, enterprise VDI) where “forensic” marks are universal. While tech diversity is widening, we still see classic LSB and DCT hacks, but 2024–25 papers (ScreenMark, CoreMark) chase *camera-shot-robust* patterns that sit in mid-frequency bands or irregular point clouds.
+**Two-thirds** of high-traffic mobile apps in China now tag screenshots; many started in 2022 after [Douban](https://pandaily.com/douban-app-screenshots-contain-user-information-watermark) & [Zhihu](https://www.sixthtone.com/news/1011179) incidents. Outside China, it's still niche. Except for DRM-heavy verticals (video streaming, enterprise VDI) where "forensic" marks are universal. While tech diversity is widening, we still see classic LSB and DCT hacks. ut 2024-25 papers (ScreenMark, CoreMark) chase *camera-shot-robust* patterns that sit in mid-frequency bands or irregular point clouds.
 
 ## Features
 
@@ -33,8 +33,8 @@ pip install -r requirements.txt
 sudo apt install -y imagemagick exiftool
 ```
 
-* ImageMagick — equalize / compare / attacks
-* ExifTool    — deep metadata wipe
+* ImageMagick - equalize / compare / attacks
+* ExifTool    - deep metadata wipe
 
 ## Usage
 
@@ -46,7 +46,7 @@ python nuke.py IN_DIR OUT_DIR              \
 
 * `--crop`  
     Hard-crops this many pixels off the top.
-    Useful if you don’t need the status bar.
+    Useful if you don't need the status bar.
 
 * `--header`  
     Applies a median filter to only the first `PX` pixels (vertical).
@@ -66,6 +66,8 @@ All comparisons below are shown after applying `convert -equalize` for visibilit
 | -------------------------- | ------------------------ |
 | ![Before](demo/demo_eq.jpg) | ![After](demo/demo_clean_eq.jpg) |
 
+This was scraped from a third party. The snow-pattern fingerprint of the original user still lingers beneath the surface.
+
 ## Output
 
 * All files saved as `.jpg` with `quality=40` and `optimize=True`
@@ -73,7 +75,7 @@ All comparisons below are shown after applying `convert -equalize` for visibilit
 
 ## Documentation
 
-See the [full walkthrough](https://kay-a11y.github.io/). (coming soon...)
+See the [full walkthrough](https://kay-a11y.github.io/). Soon.
 
 ## Further Reading
 
