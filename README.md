@@ -10,7 +10,7 @@
 
 Many modern platforms embed user-specific watermarks into app screenshots. These watermarks are **invisible** to the eye but **detectable** via equalization or frequency analysis. Some are LSB-based, some render [snow-like patterns](#before--after) across RGB channels. Some even survive compression. They are all *a form of tracking*. And no one should be silently tagged just for sharing a screenshot.
 
-**Two-thirds** of high-traffic mobile apps in China now tag screenshots; many started in 2022 after [Douban](https://pandaily.com/douban-app-screenshots-contain-user-information-watermark) & [Zhihu](https://www.sixthtone.com/news/1011179) incidents. Outside China, it's still niche. Except for DRM-heavy verticals (video streaming, enterprise VDI) where "forensic" marks are universal. While tech diversity is widening, we still see classic LSB and DCT hacks. ut 2024-25 papers (ScreenMark, CoreMark) chase *camera-shot-robust* patterns that sit in mid-frequency bands or irregular point clouds.
+**Two-thirds** of high-traffic mobile apps in China now tag screenshots; many started in 2022 after [Douban](https://pandaily.com/douban-app-screenshots-contain-user-information-watermark) & [Zhihu](https://www.sixthtone.com/news/1011179) incidents. Outside China, it's still niche. Except for DRM-heavy verticals (video streaming, enterprise VDI) where "forensic" marks are universal. While tech diversity is widening, we still see classic LSB and DCT hacks. But 2024-25 papers (ScreenMark, CoreMark) chase *camera-shot-robust* patterns that sit in mid-frequency bands or irregular point clouds.
 
 ## Features
 
@@ -30,7 +30,7 @@ pip install -r requirements.txt
 ### Optional OS tools
 
 ```bash
-sudo apt install -y imagemagick exiftool
+sudo apt install -y imagemagick libimage-exiftool-perl
 ```
 
 * ImageMagick - equalize / compare / attacks
@@ -82,3 +82,4 @@ See the [full walkthrough](https://kay-a11y.github.io/). Soon.
 * [Helpful Resource - Stgod](https://stgod.com/1482/) (ZH)
 * [Interesting Discussion on Zhihu](https://www.zhihu.com/question/517690908) (ZH)
 * [Weibo Censorship Insights](https://dpclab.org/china/dashboard/)
+* [Twitter Post](https://x.com/inroading/status/1566338872837308416) (ZH)
