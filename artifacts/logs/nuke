@@ -1,0 +1,20 @@
+  20221219_clean.jpg [R]  len:6587  ent: 0.06  printable: 0.1%  uid:False
+  20221219_clean.jpg [G]  len:6587  ent: 0.06  printable: 0.1%  uid:False
+  20221219_clean.jpg [B]  len:6587  ent: 0.06  printable: 0.1%  uid:False
+     20221219_eq.jpg [R]  len:6857  ent: 0.19  printable: 0.5%  uid:False
+     20221219_eq.jpg [G]  len:6857  ent: 0.19  printable: 0.5%  uid:False
+     20221219_eq.jpg [B]  len:6857  ent: 0.19  printable: 0.5%  uid:False
+     demo2_clean.jpg [B]  len:4639  ent: 0.01  printable: 0.0%  uid:False
+  demo2_clean_eq.jpg [R]  len:4639  ent: 0.02  printable: 0.1%  uid:False
+  demo2_clean_eq.jpg [B]  len:4635  ent: 0.01  printable: 0.0%  uid:False
+        demo2_eq.jpg [R]  len:7000  ent: 0.11  printable: 0.0%  uid:False
+        demo2_eq.jpg [B]  len:7738  ent: 0.19  printable: 0.1%  uid:False
+      demo_clean.jpg [R]  len:  35  ent: 4.94  printable:34.3%  uid:False
+      demo_clean.jpg [G]  len:  35  ent: 5.01  printable:34.3%  uid:False
+      demo_clean.jpg [B]  len:   4  ent: 2.00  printable:25.0%  uid:False
+   demo_clean_eq.jpg [R]  len:  48  ent: 4.87  printable:31.2%  uid:False
+   demo_clean_eq.jpg [G]  len:  41  ent: 5.21  printable:36.6%  uid:False
+   demo_clean_eq.jpg [B]  len:   4  ent: 2.00  printable: 0.0%  uid:False
+         demo_eq.jpg [R]  len:   4  ent: 2.00  printable:25.0%  uid:False
+         demo_eq.jpg [G]  len:  40  ent: 5.10  printable:32.5%  uid:False
+         demo_eq.jpg [B]  len:  35  ent: 5.01  printable:31.4%  uid:False

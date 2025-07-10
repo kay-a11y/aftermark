@@ -1,5 +1,6 @@
 # aftermark
 
+[![PyPI](https://img.shields.io/pypi/v/aftermark.svg)](https://pypi.org/project/aftermark/)
 ![CLI Tool](https://img.shields.io/static/v1?label=CLI&message=Tool&color=000000&style=for-the-badge&logo=gnubash&logoColor=white)
 ![Anti-Watermark](https://img.shields.io/static/v1?label=Anti&message=Watermark&color=bd1e51&style=for-the-badge)
 ![Forensic Clean](https://img.shields.io/static/v1?label=Forensic&message=Clean&color=005f73&style=for-the-badge)
@@ -19,15 +20,22 @@ Many modern platforms embed user-specific watermarks into app screenshots. These
 - **Median filtering** to dissolve patterned bands
 - All **automated** with CLI, batchable
 
-## Installation
+## Quick Install
+
+```bash
+pip install aftermark
+nuke myshot.png
+```
+
+## Tinker / Contribute
 
 ```bash
 git clone https://github.com/kay-a11y/aftermark.git
 cd aftermark
-pip install -r requirements.txt
+pip install -e .
 ```
 
-### Optional OS tools
+<details> <summary>Optional OS tools</summary>
 
 ```bash
 sudo apt install -y imagemagick libimage-exiftool-perl
@@ -36,42 +44,58 @@ sudo apt install -y imagemagick libimage-exiftool-perl
 * ImageMagick - equalize / compare / attacks
 * ExifTool    - deep metadata wipe
 
+</details>
+
 ## Usage
 
-```bash
-python nuke.py IN_DIR OUT_DIR              \
-             [--crop PX]                  \
-             [--header PX]
-```
-
-* `--crop`  
-    Hard-crops this many pixels off the top.
-    Useful if you don't need the status bar.
-
-* `--header`  
-    Applies a median filter to only the first `PX` pixels (vertical).
-    Cleans header-only snow bands without destroying the rest of the image.
-
-* Example:
+1. One-off file  →  result is saved next to your shell's CWD
 
     ```bash
-    python nuke.py ~/Screenshots/ ~/Cleaned/ --crop 96 --header 420
+    nuke demo/demo.jpg
+    # ➜ ./demo_clean.jpg
     ```
+
+2. One-off file with explicit output folder
+
+    ```bash
+    nuke demo/demo.jpg out/
+    # ➜ out/demo_clean.jpg
+    ```
+
+3. Batch clean a whole folder
+
+    ```bash
+    nuke raw_screens/ out/
+    # ➜ out/<each>_clean.jpg
+    ```
+
+Arguments:
+
+`input`:
+    Path to an *image file* **or** a *directory* of images.
+
+`outdir`:
+    Destination folder (created if missing). Optional for single-file mode;
+    defaults to the current working directory (".").
+
+`--crop`:
+    crops a configurable top margin (default=0 px)
+
+`--header`:
+    applies a 3*3 median to the first PX pixels (default=32 px)
+
+`--quality`:
+    rewrites the image as low-quality JPEG (default=40)
 
 ## Before & After
 
-All comparisons below are shown after applying `convert -equalize` for visibility. See [demo folder](./demo/) for more examples.
+All comparisons below are shown after applying `convert -equalize` for visibility. See [nuke folder](./artifacts/nuke/) for more examples.
 
 | Original (Douban)          | Cleaned (aftermark)      |
 | -------------------------- | ------------------------ |
-| ![Before](demo/demo_eq.jpg) | ![After](demo/demo_clean_eq.jpg) |
+| ![Before](artifacts/nuke/demo_eq.jpg) | ![After](artifacts/nuke/demo_clean_eq.jpg) |
 
 This was scraped from a third party. The snow-pattern fingerprint of the original user still lingers beneath the surface.
-
-## Output
-
-* All files saved as `.jpg` with `quality=40` and `optimize=True`
-* Strips all metadata by default
 
 ## Documentation
 

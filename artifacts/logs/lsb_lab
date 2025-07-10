@@ -1,0 +1,15 @@
+      clean_demo.png [R]  len:5000  ent:-0.00  printable: 0.0%  uid:False
+      clean_demo.png [G]  len:5000  ent:-0.00  printable: 0.0%  uid:False
+      clean_demo.png [B]  len:5000  ent:-0.00  printable: 0.0%  uid:False
+    demo2_all_wm.png [R]  len:   3  ent: 1.58  printable:100.0%  uid:False
+*msg*:CAT
+    demo2_all_wm.png [G]  len:7731  ent: 0.19  printable: 0.3%  uid:False
+    demo2_all_wm.png [B]  len:   3  ent: 1.58  printable:100.0%  uid:False
+*msg*:CAT
+         demo_wm.png [R]  len:   4  ent: 2.00  printable:25.0%  uid:False
+         demo_wm.png [G]  len:  40  ent: 5.07  printable:37.5%  uid:False
+         demo_wm.png [B]  len:  40  ent: 5.07  printable:30.0%  uid:False
+     hidden_demo.png [R]  len:  69  ent: 4.15  printable:100.0%  uid:True
+*msg*:{"uid": "123456789", "tid": "260239564", "ts": "2025-07-01T12:32:57"}
+     hidden_demo.png [G]  len:5000  ent:-0.00  printable: 0.0%  uid:False
+     hidden_demo.png [B]  len:5000  ent:-0.00  printable: 0.0%  uid:False

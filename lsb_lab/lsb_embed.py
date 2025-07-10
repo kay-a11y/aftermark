@@ -1,25 +1,25 @@
+from aftermark.utils.path import project_path
 from PIL import Image
 import numpy as np
-import json
 
-img = Image.new("RGB", (200, 200), "white")
+msg = "CAT"
+img = Image.open(project_path("demo", "demo2.jpg")).convert("RGB")
 arr = np.array(img)
 
-payload = {"uid":"123456789",
-           "tid":"260239564",
-           "ts":"2025-07-01T12:32:57"}
+bits = ''.join(f"{ord(c):08b}" for c in msg)
+N = len(bits)
 
-payload_bits = ''.join(f"{ord(c):08b}" for c in json.dumps(payload)) + '00000000' 
+h, w, _ = arr.shape
+flat = arr.reshape(-1, 3)
 
-flat = arr[:, :, 0].flatten()
+for i, bit in enumerate(bits):
+    for chan in range(3):  # R, G, B
+        flat[i, chan] = (flat[i, chan] & 0b11111110) | int(bit)
 
-for i, bit in enumerate(payload_bits):
-    if i >= flat.size:
-        break  
-    flat[i] = (flat[i] & 0b11111110) | int(bit)
+# Optionally
+for j in range(3):
+    flat[N, j] = flat[N, j] & 0b11111110
 
-arr[:, :, 0] = flat.reshape(arr[:, :, 0].shape)
-wm_img = Image.fromarray(arr)
-
-wm_img.save("hidden_demo.png")
-print("Done. LSB-embedded file: hidden_demo.png")
+arr2 = flat.reshape(h, w, 3)
+Image.fromarray(arr2).save(project_path("artifacts", "lsb_lab", "demo2_all_wm.png"))
+print("Watermark embedded in all channels!")
