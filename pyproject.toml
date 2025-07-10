@@ -1,13 +1,14 @@
 [project]
 name = "aftermark"
-version = "0.1.0"
+version = "0.1.1"
 requires-python = ">=3.9"
 dependencies = [
     "numpy",
     "pillow", 
-    "matplotlib",
-    "opencv-python",
 ]
+
+[project.optional-dependencies]
+dev = ["matplotlib", "opencv-python"]
 
 [project.scripts] 
 nuke = "aftermark.cli.nuke:main"

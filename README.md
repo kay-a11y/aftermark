@@ -32,7 +32,7 @@ nuke myshot.png
 ```bash
 git clone https://github.com/kay-a11y/aftermark.git
 cd aftermark
-pip install -e .
+pip install -e .[dev]
 ```
 
 <details> <summary>Optional OS tools</summary>
