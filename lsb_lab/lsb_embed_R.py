@@ -5,7 +5,7 @@ import numpy as np
 
 img = Image.new("RGB", (200, 200), "white")
 arr = np.array(img)
-img.save(project_path("artifacts", "lsb_lab", "clean_demo.png"))
+img.save(project_path("artifacts", "lsb", "clean_demo.png"))
 
 payload = {"uid":"123456789",
            "tid":"260239564",
@@ -23,5 +23,5 @@ for i, bit in enumerate(payload_bits):
 arr[:, :, 0] = flat.reshape(arr[:, :, 0].shape)
 wm_img = Image.fromarray(arr)
 
-wm_img.save(project_path("artifacts", "lsb_lab", "hidden_demo.png"))
+wm_img.save(project_path("artifacts", "lsb", "hidden_demo.png"))
 print("Done. LSB-embedded file: hidden_demo.png")

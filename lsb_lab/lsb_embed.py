@@ -21,5 +21,5 @@ for j in range(3):
     flat[N, j] = flat[N, j] & 0b11111110
 
 arr2 = flat.reshape(h, w, 3)
-Image.fromarray(arr2).save(project_path("artifacts", "lsb_lab", "demo2_all_wm.png"))
+Image.fromarray(arr2).save(project_path("artifacts", "lsb", "demo2_all_wm.png"))
 print("Watermark embedded in all channels!")

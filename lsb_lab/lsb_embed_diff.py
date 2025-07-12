@@ -16,4 +16,4 @@ for i, bit in enumerate(watermark_g):
 for i, bit in enumerate(watermark_b):
     arr[0, i, 2] = (arr[0, i, 2] & 0b11111110) | int(bit)  # Blue
 
-Image.fromarray(arr).save(project_path("artifacts", "lsb_lab", "demo_wm.png")) # must use a loss-less format, instead of .jpg 
+Image.fromarray(arr).save(project_path("artifacts", "lsb", "demo_wm.png")) # must use a loss-less format, instead of .jpg 

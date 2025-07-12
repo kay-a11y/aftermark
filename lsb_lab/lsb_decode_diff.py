@@ -2,7 +2,7 @@ from aftermark.utils.path import project_path
 from PIL import Image
 import numpy as np
 
-img = Image.open(project_path("artifacts", "lsb_lab", "demo_wm.png")).convert("RGB")
+img = Image.open(project_path("artifacts", "lsb", "demo_wm.png")).convert("RGB")
 arr = np.array(img)
 
 def bits_to_char(bits):

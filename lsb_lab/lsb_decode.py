@@ -2,7 +2,7 @@ from aftermark.utils.path import project_path
 from PIL import Image
 import numpy as np
 
-arr2 = np.array(Image.open(project_path("artifacts", "lsb_lab", "demo2_all_wm.png")))
+arr2 = np.array(Image.open(project_path("artifacts", "lsb", "demo2_all_wm.png")))
 flat2 = arr2.reshape(-1, 3)
 
 bits_r = ''.join(str(px[0] & 1) for px in flat2[:24])

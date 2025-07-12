@@ -8,7 +8,7 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-dev = ["matplotlib", "opencv-python"]
+dev = ["matplotlib", "opencv-python", "scipy"]
 
 [project.scripts] 
 nuke = "aftermark.cli.nuke:main"
@@ -20,4 +20,4 @@ build-backend = "setuptools.build_meta"
 [tool.setuptools.packages.find]
 where    = [""]       
 include  = ["aftermark*"] 
-exclude  = ["demo*", "lsb_lab*", "tests*"]
+exclude  = ["demo*", "lsb*", "tests*", "jpg", "artifacts"]
