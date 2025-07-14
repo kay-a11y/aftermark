@@ -31,7 +31,7 @@ The script:
 • applies a 3*3 median to the first PX pixels (--header default=32 px)
 • rewrites the image as low-quality JPEG      (--quality default=40)
 
-Run ``nuke -h`` for all flags.
+Run `nuke -h` for all flags.
 Repo  https://github.com/kay-a11y/aftermark
 """
 

@@ -99,7 +99,7 @@ This was scraped from a third party. The snow-pattern fingerprint of the origina
 
 ## Documentation
 
-See the [full walkthrough](https://kay-a11y.github.io/). Soon.
+See the [full walkthrough](https://kay-a11y.github.io/posts/aftermark-watermark/).
 
 ## Further Reading
 

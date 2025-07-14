@@ -2,7 +2,6 @@ from aftermark.utils.path import project_path
 import matplotlib.pyplot as plt
 
 BG = "#6a6d65ff"
-plt.style.use('dark_background')
 
 maps = sorted(m for m in plt.colormaps() if not m.endswith("_r"))
 fig, axs = plt.subplots(len(maps)//4, 4, figsize=(12, 30), facecolor=BG)
